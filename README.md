@@ -1,2 +1,2 @@
 # kublyakov.github.io
-Kublyakov's files
+Различные тестовые файлы, помогающие в обучении.
