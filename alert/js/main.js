@@ -15,6 +15,7 @@ test.changetype();
 
 let ua = detect.parse(navigator.userAgent);
 
+/*
 document.write (
   '1: ' + ua.device.family + '<br>',
   '2:  ' + ua.device.name + '<br>',
@@ -32,3 +33,4 @@ document.write (
   '13: ' + ua.os.minor + '<br>',
   '14: ' + ua.os.patch + '<br>'
 );
+*/

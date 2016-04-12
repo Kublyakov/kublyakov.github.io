@@ -66,9 +66,32 @@ body {
   width: 100%;
 }
 
+.title-container {
+  padding-left: 12%;
+}
+
 .title {
-  height: 84px;
+  position: relative;
+  width: 450px;
+  margin: 60px auto 0;
   font-weight: 800;
   color: #32b9eb;
-  background: url("../images/alert.png") no-repeat 0 50%;
+  text-align: center;
+}
+
+.title:before {
+  position: absolute;
+  top: -16px;
+  left: -88px;
+  display: block;
+  width: 84px;
+  height: 84px;
+  background: url("../images/alert.png") no-repeat 0 0;
+  content: "";
+}
+
+.line {
+  margin-top: 40px;
+  height: 15px;
+  background-color: #32b9eb;
 }
