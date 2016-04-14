@@ -4,10 +4,7 @@ import virusInfoTpl from './templates/virus-info';
 import buttonsTpl from './templates/buttons';
 import * as utils from './utils';
 
-let getScreenHeight = () => {
-  return document.documentElement.clientHeight;
-};
-let newData = {...utils.appData, height: getScreenHeight()};
+let newData = {...utils.appData};
 
 let renderTpl = (tplFn, newData) => {
   console.log(newData);

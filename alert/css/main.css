@@ -1,8 +1,13 @@
+body{
+  -webkit-text-size-adjust: none;
+}
+
 .topApp-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   margin: 0 auto;
   min-width: 320px;
   width: 100%;
@@ -13,6 +18,7 @@
   z-index: 99999999999;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-text-size-adjust: none;
 }
 
 .topApp-title {
@@ -113,7 +119,6 @@
   max-width: 720px;
   margin: 0 auto;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .topApp-button {
@@ -122,10 +127,15 @@
   height: 50px;
   float: left;
   font-size: 22px;
+  line-height: 45px;
   border: 1px solid #c2c2c2;
   background-color: #272727;
   color: #00ff00;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .topApp-button:focus {
@@ -135,4 +145,121 @@
 .topApp-button:last-child {
   color: #fefefe;
   border-left: 0;
+}
+
+@media (max-height: 580px) {
+  .topApp-wrapper {
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 500px) {
+  .topApp-title {
+    padding-top: 5px;
+  }
+
+  .topApp-title>img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .topApp-line {
+    height: 3px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  .topApp-os-alert {
+    margin-bottom: 2px;
+  }
+
+  .topApp-date {
+    margin-bottom: 8px;
+  }
+
+  .topApp-wait {
+    margin-bottom: 12px;
+  }
+
+  .topApp-progress-bar {
+    height: 25px;
+  }
+
+  .topApp-current-loading {
+    padding-top: 5px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .topApp-progress-bar-bg {
+    height: 25px;
+  }
+
+  .topApp-file-alerts {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .topApp-buttons {
+    padding-top: 15px;
+  }
+
+  .topApp-button {
+    height: 40px;
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
+@media (max-height: 400px) {
+  .topApp-line {
+    height: 1px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .topApp-os-alert {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .topApp-date {
+    margin-bottom: 5px;
+  }
+
+  .topApp-wait {
+    margin-bottom: 10px;
+  }
+
+  .topApp-progress-bar {
+    height: 18px;
+  }
+
+  .topApp-progress-bar-bg {
+    height: 18px;
+  }
+
+  .topApp-current-loading {
+    padding-top: 2px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .topApp-scan-file {
+    padding: 4px;
+  }
+
+  .topApp-file-alerts {
+    margin-bottom: 5px;
+  }
+
+  .topApp-buttons {
+    padding-top: 8px;
+  }
+
+  .topApp-button {
+    height: 33px;
+    font-size: 15px;
+    line-height: 28px;
+  }
 }

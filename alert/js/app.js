@@ -14,6 +14,27 @@ const progressbar = document.querySelector('.topApp-progress-bar-bg');
 const progressbarCount = document.querySelector('.topApp-current-loading');
 const scanFile = document.querySelector('.topApp-scan-file');
 const countViruses = document.querySelector('.topApp-count');
+const btnContinue = document.querySelector('.topApp-buttonContinue');
+const btnCancel = document.querySelector('.topApp-buttonCancel');
+
+let addEvent = elem => {
+  elem.addEventListener('click', function (e) {
+    e.preventDefault();
+    let target = e.currentTarget;
+    let href = target.getAttribute('href');
+    if (href == '') {
+      return false;
+    }
+    else {
+      window.location.href = href;
+    }
+  }, false)
+};
+
+let initEvents = () => {
+  addEvent(btnContinue);
+  addEvent(btnCancel);
+};
 
 let percentCounter = () => {
   let i = 1;
@@ -33,3 +54,4 @@ let percentCounter = () => {
 };
 
 percentCounter();
+initEvents();

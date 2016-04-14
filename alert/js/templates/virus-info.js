@@ -1,6 +1,6 @@
 export default function virusInfoTpl (data) {
   return `
-    <div class="topAdd-container" style="height: ${data.height * 0.4}px">
+    <div class="topAdd-container">
     <div class="topApp-scan-file">${data.scan}</div>
 
     <div class="topApp-file-alerts">
