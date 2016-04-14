@@ -61,8 +61,8 @@ let createUrl = () => {
         resultUrl += item.value + '/';
       }
     });
-    return resultUrl;
   }
+  return resultUrl;
 };
 
 btnContinue.setAttribute('href', createUrl());
