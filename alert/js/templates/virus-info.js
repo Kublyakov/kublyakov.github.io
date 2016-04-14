@@ -1,18 +1,17 @@
-export default function virus-infoTpl (data) {
+export default function virusInfoTpl (data) {
   return `
-    <div class="scan-file">${data.scan}</div>
+    <div class="topAdd-container" style="height: ${data.height * 0.4}px">
+    <div class="topApp-scan-file">${data.scan}</div>
 
-    <div class="file-alerts">
+    <div class="topApp-file-alerts">
       Предупреждение!
-      <br>На вашем <span class="os">${data.os}</span>
-      <br>Возможно найдено (<span class="count">${data.count}</span>)
-      <br>Подозрительных файлов!
+      <br>На вашем <span class="topApp-os">${data.os}</span> Возможно найдено (<span class="topApp-count">${data.count}
+      </span>) Подозрительных файлов!
     </div>
 
-    <div class="install-text">
-      Установить рекомендуемое приложение,
-      <br>чтобы удалить возможный вирус
-      <br>в течение 1 минут 23 секунд.
+    <div class="topApp-install-text">
+      Установить рекомендуемое приложение, чтобы удалить возможный вирус в течение 1 минут 23 секунд.
+    </div>
     </div>
     `
 }
