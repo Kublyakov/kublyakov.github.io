@@ -136,6 +136,9 @@ body{
   text-align: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .topApp-button:focus {
