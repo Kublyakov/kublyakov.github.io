@@ -21,8 +21,8 @@ export let createHumanDate = () => {
   let d = new Date();
   let day = d.getDate();
   let year = d.getFullYear();
-  let monthes = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-  return `${day} ${monthes[d.getMonth()]} ${year} г.`;
+  let monthes = d.getMonth();
+  return `${day}.${monthes}.${year}`;
 };
 
 let rand = num => Math.floor(Math.random() * num);
