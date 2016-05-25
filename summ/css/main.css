@@ -7,10 +7,28 @@
   margin: 0 auto;
 }
 
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+}
+
 .add-input {
   width: 40px;
   height: 40px;
-  background-color: silver;
+  background-color: greenyellow;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.remove-input {
+  width: 40px;
+  height: 40px;
+  background-color: darkred;
   cursor: pointer;
 }
 

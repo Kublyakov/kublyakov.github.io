@@ -12,10 +12,35 @@
 // console.log(total.toFixed(2), total2.toFixed(2));
 
 
-var input = document.createElement('input');
-input.type = "text";
-input.className = "num-input";
-input.placeholder = "Введите число";
-container.appendChild(input);
-var inputClone = input.cloneNode(true);
-container.appendChild(inputClone);
+function addInput() {
+  var input = document.getElementsByClassName('num-input');
+  var inputClone = input[0].cloneNode(true);
+  var container = document.getElementById('container');
+  container.appendChild(inputClone);
+}
+
+function removeBtn() {
+  var removeBtn = document.getElementById('removeBtn');
+  var inputs = document.getElementsByClassName('num-input');
+  if (inputs.length > 1) {
+    removeBtn.className = "remove-input";
+  }
+  else {
+    removeBtn.className = "hide";
+  }
+}
+
+function removeInput() {
+  var input = document.getElementsByClassName('num-input');
+  if (input.length > 1) {
+    input[input.length - 1].remove();
+  }
+}
+
+var addInputBtn = document.getElementById('addInputBtn');
+addInputBtn.addEventListener('click', addInput);
+addInputBtn.addEventListener('click', removeBtn);
+
+var removeInputBtn = document.getElementById('removeBtn');
+removeInputBtn.addEventListener('click', removeInput);
+removeInputBtn.addEventListener('click', removeBtn);
