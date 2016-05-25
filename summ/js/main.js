@@ -10,3 +10,12 @@
 // total2 = taxSumm / 100 * numPercent2;
 
 // console.log(total.toFixed(2), total2.toFixed(2));
+
+
+var input = document.createElement('input');
+input.type = "text";
+input.className = "num-input";
+input.placeholder = "Введите число";
+container.appendChild(input);
+var inputClone = input.cloneNode(true);
+container.appendChild(inputClone);
