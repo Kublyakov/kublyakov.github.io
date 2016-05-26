@@ -11,12 +11,13 @@
 
 // console.log(total.toFixed(2), total2.toFixed(2));
 
-function addInput() {
+function addInput(parent, placeholder, value) {
   var input = document.createElement('input');
-  var container = document.getElementById('container');
+  var container = document.getElementById(parent);
   input.type="number";
   input.className = "num-input form-control";
-  input.placeholder = "Введите число";
+  input.placeholder = placeholder;
+  input.value = value;
   container.appendChild(input);
   input.focus();
 }
@@ -41,8 +42,7 @@ function removeInput() {
 }
 
 function inputCount() {
-  var container = document.getElementById('container');
-  var input = container.getElementsByTagName('input');
+  var input = container.children;
   var summ = 0;
   for (var i = 0; i < input.length; i++) {
     summ += +input[i].value;
@@ -60,9 +60,18 @@ function firstSumm() {
   firstSumm.innerHTML = inputCount();
 }
 
+function copyInputs() {
+  var input = container.children;
+  console.log(inputs[0]);
+  console.log(inputs.length);
+  for (var i = 0; i < inputs.length; i++) {
+
+  }
+}
+
 var addInputBtn = document.getElementById('addInputBtn');
 addInputBtn.addEventListener('click', function () {
-  addInput();
+  addInput('container', 'Введите число');
   removeBtn();
 });
 
@@ -77,7 +86,7 @@ var container = document.getElementById('container');
 container.addEventListener('keydown', function(event) {
   var target = event.target;
   if (target.tagName = 'input' && event.keyCode === 13 && target.value > 0) {
-    addInput();
+    addInput('container', 'Введите число');
     removeBtn();
   }
 });
@@ -87,4 +96,11 @@ container.addEventListener('change', function (event) {
   if (target.tagName = 'input') {
     firstSumm();
   }
+});
+
+var secondSumm = document.getElementById('secondSumm');
+secondSumm.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13 && this.value > 0) {
+      addInput('finalInputsContainer', 'Итоговое число', '777');
+    }
 });
