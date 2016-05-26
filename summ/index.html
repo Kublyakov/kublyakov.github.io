@@ -13,8 +13,7 @@
   <div class="wrapper">
     1. Вводим числа и сумму.
     2. Вводим сумму с надбавками. eSumm
-    3. Проверяем равенство суммы чисел и введенной суммы.
-    4. Если значения одинаковые, то находим сколько процентов от суммы занимает каждое число. numProc = num / summ * 100
+    3. находим сколько процентов от суммы занимает каждое число. numProc = num / summ * 100
     5. i = eSumm / 100 * numProc
 
     Вводим числа. После ввода каждого числа в отдельном диве выводится сумма всех чисел, записанная в отдельную
@@ -29,7 +28,11 @@
     </div>
     <div class="first-summ-container">
       <span class="first-summ">Начальная сумма: </span>
-      <span class="first-summ" id="firstSumm"></span>
+      <span class="first-summ" id="firstSumm">0</span>
+    </div>
+    <div class="second-summ-container">
+      <div>Конечная сумма: </div>
+      <input type="text" class="second-summ" id="secondSumm" placeholder="Введите конечную сумму">
     </div>
   </div>
   <script src="js/main.js"></script>
