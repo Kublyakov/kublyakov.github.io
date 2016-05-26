@@ -15,7 +15,7 @@
 }
 
 .add-input {
-  width: 40px;
+  width: 80px;
   height: 40px;
   background-color: greenyellow;
   cursor: pointer;
@@ -26,7 +26,7 @@
 }
 
 .remove-input {
-  width: 40px;
+  width: 80px;
   height: 40px;
   background-color: darkred;
   cursor: pointer;

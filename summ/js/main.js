@@ -12,11 +12,21 @@
 // console.log(total.toFixed(2), total2.toFixed(2));
 
 
+// function addInput() {
+//   var input = document.getElementsByClassName('num-input');
+//   var inputClone = input[0].cloneNode(true);
+//   var container = document.getElementById('container');
+//   container.appendChild(inputClone);
+// }
+
 function addInput() {
-  var input = document.getElementsByClassName('num-input');
-  var inputClone = input[0].cloneNode(true);
+  var input = document.createElement('input');
   var container = document.getElementById('container');
-  container.appendChild(inputClone);
+  input.type="text";
+  input.className = "num-input";
+  input.placeholder = "Введите число";
+  container.appendChild(input);
+  input.focus();
 }
 
 function removeBtn() {
@@ -35,6 +45,11 @@ function removeInput() {
   if (input.length > 1) {
     input[input.length - 1].remove();
   }
+  input[input.length - 1].focus();
+}
+
+function firstSumm() {
+
 }
 
 var addInputBtn = document.getElementById('addInputBtn');
@@ -44,3 +59,18 @@ addInputBtn.addEventListener('click', removeBtn);
 var removeInputBtn = document.getElementById('removeBtn');
 removeInputBtn.addEventListener('click', removeInput);
 removeInputBtn.addEventListener('click', removeBtn);
+
+var container = document.getElementById('container');
+
+container.addEventListener('keydown', function(event) {
+  var target = event.target;
+  if (target.tagName = 'input' && event.keyCode === 13 && target.value > 0) {
+    addInput();
+    removeBtn();
+    var input = container.getElementsByTagName('input');
+    for (var i = 0; i < input.length - 1; i++) {
+      var summ = +input[i].value;
+      console.log(summ + summ);
+    }
+  }
+});

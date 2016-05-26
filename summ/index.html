@@ -17,12 +17,19 @@
     4. Если значения одинаковые, то находим сколько процентов от суммы занимает каждое число. numProc = num / summ * 100
     5. i = eSumm / 100 * numProc
 
+    Вводим числа. После ввода каждого числа в отдельном диве выводится сумма всех чисел, записанная в отдельную
+    переменную.
+
     <div class="container" id="container">
-      <input type="text" class="num-input" placeholder="Введите число">
+      <input type="text" class="num-input" placeholder="Введите число" autofocus>
     </div>
     <div class="buttons-container" id="buttonsContainer">
-      <div class="add-input" id="addInputBtn"></div>
-      <div class="hide" id="removeBtn"></div>
+      <div class="add-input" id="addInputBtn">Добавить инпут</div>
+      <div class="hide" id="removeBtn">Удалить инпут</div>
+    </div>
+    <div class="first-summ-container">
+      <span class="first-summ">Начальная сумма: </span>
+      <span class="first-summ" id="firstSumm"></span>
     </div>
   </div>
   <script src="js/main.js"></script>
