@@ -62,11 +62,15 @@ function firstSumm() {
 
 function copyInputs() {
   var input = container.children;
-  console.log(inputs[0]);
-  console.log(inputs.length);
-  for (var i = 0; i < inputs.length; i++) {
-
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].value > 0) {
+      addInput('finalInputsContainer', 'Итоговое число', result());
+    }
   }
+}
+
+function result() {
+  return 1111;
 }
 
 var addInputBtn = document.getElementById('addInputBtn');
@@ -101,6 +105,6 @@ container.addEventListener('change', function (event) {
 var secondSumm = document.getElementById('secondSumm');
 secondSumm.addEventListener('keydown', function (event) {
     if (event.keyCode === 13 && this.value > 0) {
-      addInput('finalInputsContainer', 'Итоговое число', '777');
+      copyInputs();
     }
 });
