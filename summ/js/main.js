@@ -14,7 +14,7 @@
 function addInput() {
   var input = document.createElement('input');
   var container = document.getElementById('container');
-  input.type="text";
+  input.type="number";
   input.className = "num-input form-control";
   input.placeholder = "Введите число";
   container.appendChild(input);
