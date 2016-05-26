@@ -47,7 +47,12 @@ function inputCount() {
   for (var i = 0; i < input.length; i++) {
     summ += +input[i].value;
   }
-  return summ;
+  if (summ >= 0) {
+    return summ;
+  }
+  else {
+    return 'Введите корректные числа';
+  }
 }
 
 function firstSumm() {
