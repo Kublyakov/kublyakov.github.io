@@ -1,9 +1,6 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
 .wrapper {
-  width: 560px;
+  width: 100%;
+  max-width: 560px;
   margin: 0 auto;
 }
 
@@ -11,14 +8,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 200px;
-}
-
-.add-input {
-  width: 80px;
-  height: 40px;
-  background-color: greenyellow;
-  cursor: pointer;
+  align-items: flex-start;
 }
 
 .hide {
@@ -33,10 +23,9 @@
 }
 
 .num-input {
-  display: block;
   margin: 10px 0;
 }
 
-.second-summ-container {
-  margin: 20px 0;
+.first-summ-container {
+  margin-top: 20px;
 }

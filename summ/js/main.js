@@ -15,7 +15,7 @@ function addInput() {
   var input = document.createElement('input');
   var container = document.getElementById('container');
   input.type="text";
-  input.className = "num-input";
+  input.className = "num-input form-control";
   input.placeholder = "Введите число";
   container.appendChild(input);
   input.focus();
@@ -25,7 +25,7 @@ function removeBtn() {
   var removeBtn = document.getElementById('removeBtn');
   var inputs = document.getElementsByClassName('num-input');
   if (inputs.length > 1) {
-    removeBtn.className = "remove-input";
+    removeBtn.className = "btn btn-danger";
   }
   else {
     removeBtn.className = "hide";

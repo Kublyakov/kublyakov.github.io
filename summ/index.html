@@ -11,31 +11,64 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="wrapper">
-    1. Вводим числа и сумму.
-    2. Вводим сумму с надбавками. eSumm
-    3. находим сколько процентов от суммы занимает каждое число. numProc = num / summ * 100
-    5. i = eSumm / 100 * numProc
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol>
+          <li>Вводим числа и сумму.</li>
+          <li>Вводим сумму с надбавками. eSumm</li>
+          <li>находим сколько процентов от суммы занимает каждое число. numProc = num / summ * 100</li>
+          <li>i = eSumm / 100 * numProc</li>
+        </ol>
+        <p>Вводим числа. После ввода каждого числа в отдельном диве выводится сумма всех чисел, записанная в отдельную
+          переменную.</p>
+      </div>
+    </div>
 
-    Вводим числа. После ввода каждого числа в отдельном диве выводится сумма всех чисел, записанная в отдельную
-    переменную.
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Начальные числа:</h3>
+            <div class="form-group" id="container">
+              <input type="text" class="num-input form-control" placeholder="Введите число" autofocus>
+            </div>
+          </div>
+        </div>
 
-    <div class="container" id="container">
-      <input type="text" class="num-input" placeholder="Введите число" autofocus>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="buttons-container" id="buttonsContainer">
+              <div class="btn btn-success" id="addInputBtn">Добавить инпут</div>
+              <div class="hide" id="removeBtn">Удалить инпут</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="first-summ-container">
+              <h4>
+                <span class="first-summ">Начальная сумма: </span>
+                <mark><span class="first-summ" id="firstSumm">0</span></mark>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="second-summ-container form-group">
+              <h3>Конечная сумма: </h3>
+              <input type="text" class="form-control" id="secondSumm" placeholder="Введите конечную сумму">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="buttons-container" id="buttonsContainer">
-      <div class="add-input" id="addInputBtn">Добавить инпут</div>
-      <div class="hide" id="removeBtn">Удалить инпут</div>
-    </div>
-    <div class="first-summ-container">
-      <span class="first-summ">Начальная сумма: </span>
-      <span class="first-summ" id="firstSumm">0</span>
-    </div>
-    <div class="second-summ-container">
-      <div>Конечная сумма: </div>
-      <input type="text" class="second-summ" id="secondSumm" placeholder="Введите конечную сумму">
-    </div>
-  </div>
+
+  </div> <!-- container -->
   <script src="js/main.js"></script>
 </body>
 </html>
