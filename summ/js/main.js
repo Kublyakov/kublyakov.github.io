@@ -1,17 +1,20 @@
+var PAR1 = document.getElementById('container');
+var PAR2 = document.getElementById('finalInputsContainer');
+var ENTER = 13;
+
 function addInput(parent, placeholder, value) {
   var input = document.createElement('input');
-  var container = document.getElementById(parent);
   input.type="number";
   input.className = "num-input form-control";
   input.placeholder = placeholder;
   input.value = value;
   input.tabIndex = "1";
-  container.appendChild(input);
-  if (parent === 'container') {
+  parent.appendChild(input);
+  if (parent.id === 'container') {
     input.focus();
   }
-  else if (parent === 'finalInputsContainer') {
-    var inputArr = container.children;
+  else if (parent.id === 'finalInputsContainer') {
+    var inputArr = parent.children;
     inputArr[0].focus();
   }
 }
@@ -60,14 +63,14 @@ function copyInputs() {
   for (var i = 0; i < input.length; i++) {
     if (input[i].value > 0) {
       var result = +secondSumm.value * (input[i].value / inputCount());
-      addInput('finalInputsContainer', 'Итоговое число', result.toFixed(2));
+      addInput(PAR2, 'Итоговое число', result.toFixed(2));
     }
   }
 }
 
 var addInputBtn = document.getElementById('addInputBtn');
 addInputBtn.addEventListener('click', function () {
-  addInput('container', 'Введите число');
+  addInput(PAR1, 'Введите число');
   removeBtn();
 });
 
@@ -81,8 +84,8 @@ removeInputBtn.addEventListener('click', function () {
 var container = document.getElementById('container');
 container.addEventListener('keydown', function(event) {
   var target = event.target;
-  if (target.tagName = 'input' && event.keyCode === 13 && target.value > 0) {
-    addInput('container', 'Введите число');
+  if (target.tagName = 'input' && event.keyCode === ENTER && target.value > 0) {
+    addInput(PAR1, 'Введите число');
     removeBtn();
   }
 });
@@ -96,10 +99,10 @@ container.addEventListener('change', function (event) {
 
 var secondSumm = document.getElementById('secondSumm');
 secondSumm.addEventListener('keydown', function (event) {
-  if (event.keyCode === 13 && this.value > 0 && inputCount() > 0) {
+  if (event.keyCode === ENTER && this.value > 0 && inputCount() > 0) {
     copyInputs();
   }
-  else if (event.keyCode === 13 && !(inputCount() > 0)) {
+  else if (event.keyCode === ENTER && !(inputCount() > 0)) {
     alert('Проверьте все вводимые данные');
   }
 });
