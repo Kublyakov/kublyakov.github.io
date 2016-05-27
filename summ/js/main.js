@@ -1,16 +1,3 @@
-// var num = +prompt('Введите первое число', '');
-// var num2 = +prompt('Введите второе число', '');
-// var summ = +prompt('Введите сумму', '');
-// var taxSumm = +prompt('Введите сумму с налогами', '');
-//
-// numPercent = num / summ ;
-// numPercent2 = num2 / summ;
-//
-// total = taxSumm * numPercent;
-// total2 = taxSumm * numPercent2;
-//
-// console.log(total.toFixed(2), total2.toFixed(2));
-
 function addInput(parent, placeholder, value) {
   var input = document.createElement('input');
   var container = document.getElementById(parent);
@@ -18,6 +5,7 @@ function addInput(parent, placeholder, value) {
   input.className = "num-input form-control";
   input.placeholder = placeholder;
   input.value = value;
+  input.tabIndex = "1";
   container.appendChild(input);
   if (parent === 'container') {
     input.focus();
@@ -75,15 +63,6 @@ function copyInputs() {
       addInput('finalInputsContainer', 'Итоговое число', result.toFixed(2));
     }
   }
-}
-
-function result() {
-  return 777;
-}
-
-function test() {
-  var input = container.children;
-  console.log(input);
 }
 
 var addInputBtn = document.getElementById('addInputBtn');
