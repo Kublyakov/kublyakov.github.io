@@ -1,0 +1,35 @@
+.container {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.theme-item {
+  width: 275px;
+  margin: 10px 0;
+  background-color: rgba(122, 122, 122, .2);
+}
+
+.title-link {
+  color: #1b6d85;
+  text-decoration: none;
+}
+
+.title-link:hover {
+  text-decoration: underline;
+}
+
+.theme-title {
+  font-size: 20px;
+  color: #1b6d85;
+}
+
+.image-link {
+  display: block;
+  width: 275px;
+  height: 147px;
+  text-decoration: none;
+}
