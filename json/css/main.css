@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(190, 190, 190, .5);
+}
+
 .container {
   width: 600px;
   display: flex;
@@ -13,6 +17,10 @@
   background-color: rgba(122, 122, 122, .2);
 }
 
+.theme-item:nth-of-type(20n) {
+  background-color: red;
+}
+
 .title-link {
   color: #1b6d85;
   text-decoration: none;
@@ -23,8 +31,13 @@
 }
 
 .theme-title {
+  display: inline-block;
   font-size: 20px;
   color: #1b6d85;
+}
+
+.theme-title:hover {
+  text-decoration: underline;
 }
 
 .image-link {
