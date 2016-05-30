@@ -52,11 +52,11 @@ function themesLoop(data) {
                 <div href="//newth.orbitum.com/#!cat/${itemLink}" class="image-link">
                   <img src="${item.grid_preview}" alt="${item.full_title}" class="theme-image" data-bg="${item.list_preview}">
                 </div>
-                <a href="//newth.orbitum.com/#!cat/${itemLink}" class="title-link">
-                  <h2 class="theme-title">
+                <div href="//newth.orbitum.com/#!cat/${itemLink}" class="title-link">
+                  <h2 class="theme-title" data-fullTitle="${item.full_title}">
                     ${item.title}
                   </h2>
-                </a>
+                </div>
                 <div class="rating">Рейтинг темы: ${item.rating}</div>
                 <div class="install-count">Количество установок: ${item.install_cnt}</div>
               </div>
@@ -84,3 +84,16 @@ function addBackground() {
 }
 
 addBackground();
+
+function changeTitle() {
+  container.addEventListener('click', function(e) {
+    var target = e.target;
+    if (target.className === 'theme-title') {
+      var fullTitle = target.getAttribute('data-fullTitle');
+      var newTitle = prompt('Enter new title', fullTitle);
+      target.innerHTML = newTitle;
+    }
+  });
+}
+
+changeTitle();
