@@ -14,7 +14,7 @@ body {
 .theme-item {
   width: 275px;
   margin: 10px 0;
-  background-color: rgba(122, 122, 122, .2);
+  background-color: rgba(220, 220, 220, 1);
 }
 
 .theme-item:nth-of-type(20n) {

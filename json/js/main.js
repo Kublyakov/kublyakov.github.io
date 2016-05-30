@@ -1,28 +1,57 @@
 'use strict';
 
-var link = '//newth.orbitum.com/api/viewtheme.php?std_out=20&oft=0&cat=3';
+var container = document.getElementById('container');
 
-fetch(link)
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
-          response.status);
-        return;
-      }
-      response.json().then(function(data) {
-        var container = document.getElementById('container');
+var Page = {
+  onScroll: function () {
+    var scrolled = window.pageYOffset;
+    var scrollHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
 
-        function themesLoop() {
-          for (var i = 0; i < data.themes.length; i++) {
-            var item = data.themes[i];
-            var itemLink = item.category_id + '/' + item.id;
+    if (scrolled === scrollHeight - document.documentElement.clientHeight) {
+      console.log(Themes.offset());
+      Themes.getThemes().then(function (data) {
+        themesLoop(data);
+      });
+    }
+  }
+};
 
-            var themeItem = `
+var Themes = {
+  OFFSET: 0,
+  offset: function () {
+    return this.OFFSET += 20;
+  },
+  getThemesUrl: function () {
+    return '//newth.orbitum.com/api/viewtheme.php?std_out=20&oft='+ this.OFFSET +'&cat=3';
+  },
+  getThemes: function () {
+    return fetch(Themes.getThemesUrl())
+      .then(
+        function(response) {
+          return response.json();
+        }
+      )
+      .catch(function() {
+        alert('Конец!');
+      });
+  }
+};
+
+function themesLoop(data) {
+  for (var i = 0; i < data.themes.length; i++) {
+    var item = data.themes[i];
+    var itemLink = item.category_id + '/' + item.id;
+    themesLoop.isEvent = false;
+
+    var themeItem = `
               <div class="theme-item">
-                <a href="//newth.orbitum.com/#!cat/${itemLink}" class="image-link">
-                  <img src="${item.grid_preview}" alt="${item.full_title}">
-                </a>
+                <div href="//newth.orbitum.com/#!cat/${itemLink}" class="image-link">
+                  <img src="${item.grid_preview}" alt="${item.full_title}" class="theme-image" data-bg="${item.list_preview}">
+                </div>
                 <a href="//newth.orbitum.com/#!cat/${itemLink}" class="title-link">
                   <h2 class="theme-title">
                     ${item.title}
@@ -32,30 +61,26 @@ fetch(link)
                 <div class="install-count">Количество установок: ${item.install_cnt}</div>
               </div>
               `;
-            container.insertAdjacentHTML('beforeEnd', themeItem);
-          }
-        }
 
-        themesLoop();
+    container.insertAdjacentHTML('beforeEnd', themeItem);
+  }
+}
 
-        window.onscroll = function() {
-          var scrolled = window.pageYOffset;
-          var scrollHeight = Math.max(
-            document.body.scrollHeight, document.documentElement.scrollHeight,
-            document.body.offsetHeight, document.documentElement.offsetHeight,
-            document.body.clientHeight, document.documentElement.clientHeight
-          );
+Themes.getThemes().then(function (data) {
+  themesLoop(data);
+});
 
-          if (scrolled === scrollHeight - document.documentElement.clientHeight) {
-            link = '//newth.orbitum.com/api/viewtheme.php?std_out=20&oft=20&cat=3';
-            fetch(link);
-            themesLoop();
-          }
-        };
+window.onscroll = Page.onScroll;
 
-      });
+function addBackground() {
+  container.addEventListener('click', function(e) {
+    var target = e.target;
+    if (target.className === 'theme-image') {
+      var link = target.getAttribute('data-bg');
+      document.body.style.background = `url('${link}') no-repeat fixed center top`;
+      document.body.style.backgroundSize = 'cover';
     }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
   });
+}
+
+addBackground();
