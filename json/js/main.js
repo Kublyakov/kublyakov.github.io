@@ -1,6 +1,7 @@
 'use strict';
 
 var container = document.getElementById('container');
+var ENTER = 13;
 
 var Page = {
   onScroll: function () {
@@ -85,20 +86,35 @@ function addBackground() {
 
 addBackground();
 
-function changeTitle() {
+function createInput(fullTitle) {
+  var input = document.createElement('input');
+  input.className = 'input-title';
+  input.value = fullTitle;
+  return input;
+}
+
+function addInput() {
   container.addEventListener('click', function(e) {
     var target = e.target;
     if (target.className === 'theme-title') {
       var fullTitle = target.getAttribute('data-fullTitle');
-      var input = document.createElement('input');
-      input.className = 'input-title';
-      input.value = fullTitle;
-      target.insertBefore(input, null);
-      input.focus();
-      // var newTitle = prompt('Enter new title', fullTitle);
-      // target.innerHTML = newTitle;
+      var elem = target.insertBefore(createInput(fullTitle), null);
+      elem.focus();
+      elem.onblur = function () {
+        // event.keyCode === ENTER && target.value > 0
+        target.innerHTML = elem.value;
+      };
     }
   });
 }
 
-changeTitle();
+function saveTitle() {
+    elem.onblur = function () {
+    // event.keyCode === ENTER && target.value > 0
+    console.log(changeTitle());
+    target.removeChild(elem);
+    target.innerHTML = elem.value;
+  };
+}
+
+addInput();
