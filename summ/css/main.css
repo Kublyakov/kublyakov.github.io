@@ -34,3 +34,7 @@
   display: block;
   margin: 19px 0;
 }
+
+.panel-container {
+  overflow: hidden;
+}
