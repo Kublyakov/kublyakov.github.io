@@ -70,6 +70,22 @@ function copyInputs() {
   }
 }
 
+function clearBtn() {
+  var inputs = document.getElementById('finalInputsContainer');
+  var clearBtn = document.getElementById('clearBtn');
+  if (inputs.children.length > 0) {
+    clearBtn.className = "btn btn-danger";
+  }
+  else {
+    clearBtn.className = "hide";
+  }
+  clearBtn.addEventListener('click', function () {
+    if (inputs.children.length > 0) {
+      location.reload();
+    }
+  });
+}
+
 var addInputBtn = document.getElementById('addInputBtn');
 addInputBtn.addEventListener('click', function () {
   addInput(PAR1, 'Введите число');
@@ -103,6 +119,7 @@ var secondSumm = document.getElementById('secondSumm');
 secondSumm.addEventListener('click', function (event) {
   if (inputCount() > 0) {
     copyInputs();
+    clearBtn();
   }
   else {
     alert('Проверьте все вводимые данные');

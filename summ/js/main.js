@@ -21,8 +21,7 @@ function addInput(parent, placeholder, value) {
 
 function removeBtn() {
   var removeBtn = document.getElementById('removeBtn');
-  var inputs = document.getElementsByClassName('num-input');
-  if (inputs.length > 1) {
+  if (container.children.length > 1) {
     removeBtn.className = "btn btn-danger";
   }
   else {
@@ -68,6 +67,22 @@ function copyInputs() {
   }
 }
 
+function clearBtn() {
+  var inputs = document.getElementById('finalInputsContainer');
+  var clearBtn = document.getElementById('clearBtn');
+  if (inputs.children.length > 0) {
+    clearBtn.className = "btn btn-danger";
+  }
+  else {
+    clearBtn.className = "hide";
+  }
+  clearBtn.addEventListener('click', function () {
+    if (inputs.children.length > 0) {
+      location.reload();
+    }
+  });
+}
+
 var addInputBtn = document.getElementById('addInputBtn');
 addInputBtn.addEventListener('click', function () {
   addInput(PAR1, 'Введите число');
@@ -101,6 +116,7 @@ var secondSumm = document.getElementById('secondSumm');
 secondSumm.addEventListener('keydown', function (event) {
   if (event.keyCode === ENTER && this.value > 0 && inputCount() > 0) {
     copyInputs();
+    clearBtn();
   }
   else if (event.keyCode === ENTER && !(inputCount() > 0)) {
     alert('Проверьте все вводимые данные');
