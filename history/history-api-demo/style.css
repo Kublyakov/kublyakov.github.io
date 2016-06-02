@@ -1,0 +1,20 @@
+body {
+	margin-top: 150px;
+}
+.container {
+    margin: 0 auto;
+    width: 50%;
+}
+.nav a {
+	font-family: Arial;
+	color: #666;
+	text-decoration: underline;
+	font-size: 22px;
+}
+.nav a:hover {
+	color: #000;
+}
+.jumbotron {
+    padding: 10px;
+    background-color: #cacaca;
+}
