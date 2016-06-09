@@ -64,7 +64,7 @@ function copyInputs() {
     if (input[i].value > 0) {
       // var result = +secondSumm.value * (input[i].value / inputCount());
       var subresult = +input[i].value + (+input[i].value / 100 * 18);
-      var result = subresult + (subresult / 100 * 10);
+      var result = subresult + (subresult / 100 * 5);
       addInput(PAR2, 'Итоговое число', result.toFixed(2));
     }
   }
