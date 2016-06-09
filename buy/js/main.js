@@ -9,12 +9,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function hint(data) {
       input.oninput = function () {
-        var qwe = data.filter(function(val) {
-          if (val.indexOf.charAt(0) === input.value) {
-            console.log(qwe);
+        var value = input.value;
+        for (var product in data) {
+          if (product.indexOf(value) === 0 && value !== '') {
+            addTip(product);
           }
-        });
+        }
       }
     }
   };
+
+  function addTip(product) {
+    var tipElem = document.createElement('div');
+    tipElem.className = 'tip-element';
+    tipElem.innerHTML = product;
+    inputContainer.appendChild(tipElem);
+  }
 });
+
+// for (var i = 0; ; i++) {
+//   if (product[i] === input.value) {
+//     console.log(product);
+//   }
+// }
