@@ -24,18 +24,67 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 choose-container" id="chooseContainer">
-      <button type="button" class="btn btn-primary btn-lg" id="proportionCalcBtn">Рассчет долей</button>
-      <button type="button" class="btn btn-primary btn-lg" id="percentCalcBtn">Рассчет процентов</button>
+    <div class="col-xs-12 choose-container form-group" id="chooseContainer">
+      <button type="button" class="btn btn-default btn-lg" id="proportionCalcBtn">Рассчет долей</button>
+      <button type="button" class="btn btn-default btn-lg" id="percentCalcBtn">Рассчет процентов</button>
     </div>
   </div>
 
   <div class="row">
-    <div class="proportion-calc-container" id="proportionCalcContainer">
+    <div class="proportion-calc-container clearfix" id="proportionCalcContainer">
       <div class="col-xs-12">
-        <h3>Доли!</h3>
+        <div class="panel panel-primary panel-container clearfix">
+          <div class="col-xs-6">
+            <div class="first-summ-container form-group">
+              <h4>
+                <span class="first-summ">Начальная сумма: </span>
+            <span class="first-summ-m">
+              <mark><span class="first-summ" id="firstSumm">0</span></mark>
+            </span>
+              </h4>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="second-summ-container form-group">
+              <h4>Конечная сумма: </h4>
+              <input type="text" class="form-control" id="secondSumm" placeholder="Введите конечную сумму" tabindex="2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Начальные числа:</h4>
+            <div class="form-group" id="container">
+              <input type="text" class="num-input form-control" placeholder="Введите число" autofocus tabindex="1">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="buttons-container" id="buttonsContainer">
+              <div class="btn btn-success" id="addInputBtn">Добавить инпут</div>
+              <div class="hide" id="removeBtn">Удалить инпут</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Конечные числа:</h4>
+            <div class="form-group">
+              <div class="final-inputs-container" id="finalInputsContainer"></div>
+            </div>
+            <div class="hide" id="clearBtn">Очистить всё</div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="percent-calc-container" id="percentCalcContainer">
       <div class="col-xs-12">
         <h3>Проценты!</h3>

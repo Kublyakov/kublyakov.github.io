@@ -20,3 +20,55 @@ body {
 .choose-container > button {
   width: 200px;
 }
+
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hide {
+  display: none;
+}
+
+.remove-input {
+  width: 80px;
+  height: 40px;
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.num-input {
+  margin: 10px 0;
+}
+
+.first-summ-container {
+  margin-bottom: 21px;
+}
+
+.first-summ-m {
+  display: block;
+  margin: 19px 0;
+}
+
+button:focus,
+button:active {
+  outline: none !important;
+}
+
+.error-input {
+  border-color: #a94442;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.error-input:focus {
+  border-color: #843534;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+}
