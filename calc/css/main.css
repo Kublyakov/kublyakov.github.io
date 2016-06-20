@@ -1,0 +1,22 @@
+body {
+  padding-top: 10px;
+}
+
+.proportion-calc-container,
+.percent-calc-container {
+  display: none;
+}
+
+.choose-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calc-name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.choose-container > button {
+  width: 200px;
+}
