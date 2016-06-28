@@ -68,11 +68,15 @@ var input = {
 
 container.addEventListener('keydown', function (e) {
   var target = e.target;
-  if (target.tagName.toLowerCase() === 'input' && event.keyCode === BTN && target.value > 0) {
+  if (target.tagName.toLowerCase() === 'input' && event.keyCode === BTN && getFloat(target) > 0) {
     input.item();
     target.classList.remove('error-input');
   }
-  else if (target.tagName.toLowerCase() === 'input' && event.keyCode === BTN && !(target.value > 0)) {
+  else if (target.tagName.toLowerCase() === 'input' && event.keyCode === BTN && !(getFloat(target) > 0)) {
     target.classList.add('error-input');
   }
 });
+
+function getFloat(target) {
+  return parseFloat(target.value .replace(/,/, '.'));
+}
