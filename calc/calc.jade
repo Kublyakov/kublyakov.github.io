@@ -1,0 +1,49 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Калькулятор для бухгалтера")
+
+    link(rel="stylesheet" href="css/bootstrap.min.css")
+    link(rel="stylesheet" href="css/bootstrap-theme.min.css")
+    link(rel="stylesheet" href="css/main.css")
+
+  body
+
+    .container
+      .row
+        .col-xs-12
+          .panel.panel-primary
+            .panel-body
+              h2.calc-name#calcName
+
+      .row
+        .proportion-calc-container.clearfix#proportionCalcContainer
+          .col-xs-12
+            .panel.panel-primary.panel-container.clearfix
+              .col-xs-6
+                .first-summ-container.form-group
+                  h4
+                    span.first-summ Начальная сумма
+                    span.first-summ-m
+                      mark
+                        span.first-summ#firstSumm 0
+              .col-xs-6
+                .second-summ-container.form-group
+                h4 Конечная сумма
+                input.form-control#secondSumm(type="text" placeholder="Введите конечную сумму" tabindex="2")
+          .col-xs-6
+            .row
+              .col-xs-12
+                h4 Начальные числа:
+                .form-group#container
+                  input.num-input.form-control(type="text" placeholder="Введите число" autofocus tabindex="1")
+            .row
+              .col-xs-12
+                .buttons-container#buttonsContainer
+                  .btn.btn-success#addInputBtn Добавить инпут
+                  .hide#removeBtn Удалить инпут
+
+    script(src="js/main.js")
