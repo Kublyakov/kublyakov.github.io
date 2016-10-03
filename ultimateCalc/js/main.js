@@ -5,7 +5,7 @@ let percentBtn = document.querySelector('.percent-btn');
 let percentInputValue = percentInput.value;
 
 const percentError = () => {
-  alert('Ааа, всё сломалось!');
+  alert('Введи процент в первое поле =)');
 };
 
 const currentPercent = () => {
