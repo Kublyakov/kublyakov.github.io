@@ -1,0 +1,8 @@
+.form-control {
+	display: inline-block !important;
+	width: auto;
+}
+
+.percent-btn {
+	width: 100px;
+}
