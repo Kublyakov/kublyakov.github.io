@@ -1,23 +1,34 @@
 'use strict';
 
-const setPercent = () => {
+const percentError = () => {
+  console.log('error');
+};
+
+const currentPercent = () => {
   let percentInput = document.querySelector('.percent');
   let percentBtn = document.querySelector('.percent-btn');
-  let currentPercent = localStorage.getItem('percent');
+  let localPercent = localStorage.getItem('percent');
+  let percentInputValue = percentInput.value;
 
-  if (currentPercent > 0) {
-    percentInput.value = currentPercent;
+  if (localPercent > 0) {
+    percentInput.value = localPercent;
+  }
+  else {
+    percentError();
   }
 
   percentBtn.addEventListener('click', () => {
-    if (percentInput.value > 0) {
-      console.log(percentInput.value);
-      localStorage.setItem('percent', percentInput.value);
+    percentInputValue = percentInput.value.replace(/,/g, '.');
+    if (percentInputValue > 0) {
+      localStorage.setItem('percent', percentInputValue);
+    }
+    else {
+      percentError();
     }
   });
-}; 
+};
 
-setPercent();
+currentPercent();
 
 /*
 * Вводим число с необходимыми процентами.
