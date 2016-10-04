@@ -35,7 +35,7 @@ const calc = () => {
 
   gettingNumber.addEventListener('keydown', (e) => {
     let target = e.target;
-    let num = +(target.value);
+    let num = +(target.value.replace(/,/g, '.'));
     if (num > 0 && e.keyCode === 13) {
       let subresult = num + (+num / 100 * 18);
       let result = subresult + (subresult / 100 * localPercent);
