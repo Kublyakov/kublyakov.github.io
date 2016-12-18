@@ -6,7 +6,13 @@ const mainTable  = document.querySelector('#main-table');
 
 buildTable.addEventListener('click', () => {
   let data = inputData.value;
-  let arr = data.split(/\n/g);
-  console.log(arr);
-  mainTable.innerHTML = arr;
+  let arrLine = data.split(/\n/g);
+  arrLine.forEach((item, i) => {
+    let qwe = item.split('	');
+    console.log(qwe);
+    return qwe;
+  });
+  mainTable.innerHTML = arrLine;
 });
+
+// .split('	')
