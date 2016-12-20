@@ -30,5 +30,4 @@ buildTable.addEventListener('click', () => {
     mainTbody.appendChild(tr);
   }
   mainTable.appendChild(mainTbody);
-
 });
